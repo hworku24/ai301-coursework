@@ -181,13 +181,17 @@ Evidence locations:
 2. **Official full evaluation attempt 1, 2026-09-29:** ran the unchanged course harness with the installed rubric and skill, all 20 scored bundles, and `--save-run`. The actual agreement line was `agreement: 0/0 scored items`. All 20 items returned `ERROR (claude exited 1: )`; no item received a verdict. The `0/0` reports no successfully scored items, not 0 correct out of 20. The harness refused to write the submission transcript and preserved the original placeholder.
 3. A direct diagnostic using the same `sonnet` model returned: `You've hit your individual spend limit · run /usage-credits to ask your admin for a higher limit`. Authentication had succeeded. No further model calls or retries were made after identifying the limit, and the rubric was not changed in response to this infrastructure failure.
 
-No successful full run or category-floor result exists yet. Once the account administrator restores inference access, rerun the full harness and append its exact agreement line here. The last successful score must match the generated `eval-run.txt`; never hand-edit that transcript. The earlier Codex live review and manual snapshot analysis are not harness runs.
+4. **Supplementary Codex evaluation, 2026-09-29:** applied the unchanged rubric to all 20 frozen bundles and recorded all 140 check judgments. Agreement: **18/20 (90%)**; clear-accept 7/8, dead-repo 3/3, claimed 4/4, scope 3/4, policy 1/1. Gold labels had already been visible, so this is not a blind benchmark. This is a Codex review, not a Claude Code/Sonnet harness run. Full evidence and per-item JSON outputs: [codex-eval-review.md](codex-eval-review.md).
+
+No successful official full run or official category-floor result exists yet. Once the account administrator restores inference access, rerun the full harness and append its exact agreement line here. The last successful score must match the generated `eval-run.txt`; never hand-edit that transcript. The earlier Codex live review and manual snapshot analysis are not harness runs.
 
 **Issue analysis**
 
 Scored item: `issue-12`, the frozen BookWyrm issue captured on 2026-08-12. Actual result in official attempt 1: `ERROR`, with `verdict: null` and `error: "claude exited 1: "`; the account limit prevented the model from making a decision. Instructor gold label in `eval/gold-labels.json`: `reject`. Separately, manual application of the current rubric by Codex gives `reject`. This manual decision is not substituted for the missing harness verdict.
 
 The decisive snapshot quote is: "We do not accept AI-generated code or documentation." That is an explicit ban applicable to a contribution that uses AI-generated code or documentation, so `ai_policy_compatible` fails for the planned AI-assisted generation workflow. Its required weight makes the verdict `reject` regardless of the issue's beginner label, recent commits, or otherwise bounded progress-bar request. This analysis uses the frozen policy entry, not the current public BookWyrm site. It demonstrates a real check application but is not evidence of a completed evaluation run.
+
+Additional actual Codex results: `issue-09` was `reject` against gold `accept`: the 2022 maintainer invitation was interpreted as approval of a claim, and the written approved-claim rule has no expiry without an explicit release. `issue-20` was `accept` against gold `reject`: its body supplies place/resize/move/export outcomes and excludes custom uploads, satisfying the broad written scope condition despite an unspecified logo asset and unconfirmed product fit. These disagreements reveal rule limitations; the rubric was not silently changed to match gold. The complete review also recorded the policy failure on `issue-12`.
 
 **Check rationale**
 
@@ -201,7 +205,7 @@ This check is required because a technically suitable issue is still unsuitable 
 
 **Trade-offs**
 
-The quoted check deliberately accepts policies with disclosure, review, understanding, or testing conditions, even though the issue-selection stage cannot verify that those future obligations will be fulfilled. That permits useful contributions but leaves a later compliance responsibility. Conversely, genuinely unavailable policy evidence rejects a candidate and may miss a project that would have welcomed assistance. The 2026-08-12 snapshot for `issue-12` is rejected by manual application of this check; the attempted Sonnet run produced only errors, so it does not establish the check’s effect on the complete set. Policy can change, so it should be rechecked before a contribution is submitted.
+The quoted check deliberately accepts policies with disclosure, review, understanding, or testing conditions, even though the issue-selection stage cannot verify that those future obligations will be fulfilled. That permits useful contributions but leaves a later compliance responsibility. Conversely, genuinely unavailable policy evidence rejects a candidate and may miss a project that would have welcomed assistance. The 2026-08-12 snapshot for `issue-12` is rejected by manual application of this check; the supplementary 20-item Codex review also rejects it and matches the single policy-category gold label. The attempted Sonnet run produced only errors, so it establishes no model verdicts. Policy can change, so it should be rechecked before a contribution is submitted.
 
 ---
 
@@ -215,4 +219,4 @@ The quoted check deliberately accepts policies with disclosure, review, understa
 
 ---
 
-Related paths: `eval-run.txt`, `live-review-codex.md`, and `submission-status.md` in this directory; the installed skill's submitted copy is in `tools/issue-select/`.
+Related paths: `codex-eval-review.md`, `codex-eval-review.json`, `codex-eval-items/`, `eval-run.txt`, `live-review-codex.md`, and `submission-status.md` in this directory; the installed skill's submitted copy is in `tools/issue-select/`.

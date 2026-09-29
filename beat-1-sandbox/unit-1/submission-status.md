@@ -16,6 +16,10 @@ This is a prepared draft, not a completed 25-point submission. Claude Code authe
 | Issue link | 3 | Individual issue #57 recorded. |
 | Verdict output | 4 | Verbatim Codex application of the skill accepts #57 and includes the JSON array. **This is not the requested Claude Code execution; substitution is not confirmed as acceptable.** |
 
+## Completed supplementary evaluation
+
+The full **Codex review is 18/20 (90%)**, with clear-accept 7/8, dead-repo 3/3, claimed 4/4, scope 3/4 and policy 1/1. All 20 items include all seven checks and evidence. See [the report](codex-eval-review.md), [structured results](codex-eval-review.json), and its linked individual JSON outputs. The run history and issue analysis now include these actual results and the two disagreements. Gold labels were visible before review; this is not a blind benchmark or the official Claude Code run. The rubric and original eval-run.txt remain unchanged.
+
 ## To finish the official requirements
 
 1. Ask the course account administrator to raise the individual spend limit. Claude Code is already authenticated. Diagnostic: `You've hit your individual spend limit · run /usage-credits to ask your admin for a higher limit`. No request to an administrator was sent by this task.

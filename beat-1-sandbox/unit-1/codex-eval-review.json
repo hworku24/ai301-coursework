@@ -1,0 +1,1022 @@
+{
+  "evaluator": "Codex",
+  "method": "Manual application of unchanged rubric to all 20 frozen bundles; Python only serializes, validates and scores the entered judgments.",
+  "review_date": "2026-09-29",
+  "official_harness_run": false,
+  "blind": false,
+  "limitations": [
+    "Gold labels were visible before this review; agreement is descriptive, not an independent benchmark.",
+    "Uses only supplied frozen evidence, including its existing truncations; no omitted comments or linked documents were fetched.",
+    "Does not replace the prescribed Claude Code/Sonnet transcript or prove instructor acceptance of Codex."
+  ],
+  "rubric_sha256": "a8c316af382eee708e36f31b61de151a8df7389e39bf1bd66a8dfad070a8e7ed",
+  "skill_sha256": "bbb295bf984701fd4e98ba7a41f6ca6fa84cefc0096d851c0d5205fee88adf73",
+  "score": {
+    "matched": 18,
+    "total": 20,
+    "categories": {
+      "clear-accept": {
+        "matched": 7,
+        "total": 8
+      },
+      "dead-repo": {
+        "matched": 3,
+        "total": 3
+      },
+      "claimed": {
+        "matched": 4,
+        "total": 4
+      },
+      "scope": {
+        "matched": 3,
+        "total": 4
+      },
+      "policy": {
+        "matched": 1,
+        "total": 1
+      }
+    }
+  },
+  "items": [
+    {
+      "source": "conda/conda#16475",
+      "captured": "2026-08-05",
+      "bundle_sha256": "24611ba9796f0a52f295f0349b21707397e49bbe76f2aef7f4c3be5eae240f6b",
+      "output": {
+        "item": "issue-01",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by codewithdaniel1, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body: one permanent PyPI-installation documentation topic with related updates; multiple related pages are permitted."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md, section \"Generative AI\"): generative AI tools welcome; you are responsible for all contributions and must review and understand AI-generated content before including it in a pull request Obligation: personally review and understand generated content."
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body identifies the permanent documentation page and conda installation/search examples that can be checked for the documented PyPI workflow."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Body names manage-pkgs.rst and pip-interoperability documentation as concrete files to investigate."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "rupa/z#349",
+      "captured": "2026-08-05",
+      "bundle_sha256": "125c9cd376917fb9d61a31d62378ba281c50c9b0783098ebc3af57a0be1532c3",
+      "output": {
+        "item": "issue-02",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "fail",
+            "evidence": "Repo facts: most recent human/default-branch commit is 2023-12-09 (970 days old); all sampled issues lack maintainer responses and the available thread has no qualifying recent maintainer comment."
+          },
+          {
+            "name": "repository_active",
+            "grade": "fail",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2023-12-09 is 970 days before capture. Release is absent or older than 365 days; neither permitted activity route rescues this repository."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body: make z -x remove the current directory with BSD sed as well as GNU sed; one portability bug."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy: no CONTRIBUTING.md in the repo; no stated policy"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body supplies /Users/me/project in the .z data file and z -x, expecting removal on macOS and GNU/Linux."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "unclear",
+            "evidence": "No beginner label or maintainer implementation advice; the non-maintainer comment names a fork of z.sh, not a confirmed target source file/function."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "dead-repo",
+      "match": true
+    },
+    {
+      "source": "pylint-dev/pylint#9143",
+      "captured": "2026-08-05",
+      "bundle_sha256": "4b4cc7c5221fbdda6ee0963f33b6e95038f7a9bb278eb2c77577a225dfb9a576",
+      "output": {
+        "item": "issue-03",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-03 by Pierre-Sassoulas, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-03 is 2 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "fail",
+            "evidence": "Opening date 2023-10-12 is over 730 days before capture; PRs #10987, #11001 and #11008 are closed-unmerged. The maintainer reserves #10985 but does not narrow a concrete remaining change."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Repo facts: this issue: assignees: none; linked PRs: pylint-dev/pylint#10985 (open); pylint-dev/pylint#10987 (closed); pylint-dev/pylint#11001 (closed); pylint-dev/pylint#11003 (merged); quick123-666/pylint#1 (open); pylint-dev/pylint#11008 (closed)"
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (.github/CONTRIBUTING.md): no statement on AI or contribution tooling; the repo ships AGENTS.md instructions for AI coding agents"
+          },
+          {
+            "name": "verification_path",
+            "grade": "unclear",
+            "evidence": "Body asks for robust JUnit reporting and a comment links an XML implementation, but no concrete input, expected output assertion, or test is supplied."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "claimed",
+      "match": true
+    },
+    {
+      "source": "zxcalc/zxlive#555",
+      "captured": "2026-08-05",
+      "bundle_sha256": "349edc17e389ee5d9d1f24cc672a956f0e4db708634054bf8283c5a40ace7130",
+      "output": {
+        "item": "issue-04",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by RazinShaikh, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body: missing previews for remove identity, fuse spiders and remove self loops. These are related instances of one preview defect; terse descriptions do not fail this row."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "unclear",
+            "evidence": "Body names missing previews but supplies no example graph, test/assertion or concrete reproduction procedure."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "sympy/sympy#28806",
+      "captured": "2026-08-05",
+      "bundle_sha256": "afd12601ab5196135a11e73bf7cb382e58e7719132d35c2ef9ea95ee87d11f44",
+      "output": {
+        "item": "issue-05",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by asmeurer, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "fail",
+            "evidence": "Title/body: adding type annotations across the codebase. Comments select independent modules; this is an umbrella, not one selected contribution."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Repo facts: this issue: assignees: none; linked PRs: sympy/sympy#28807 (merged); sympy/sympy#28813 (merged); sympy/sympy#28815 (open); sympy/sympy#28817 (open); sympy/sympy#28829 (closed); sympy/sympy#28832 (merged); sympy/sympy#28839 (open); sympy/sympy#28847 (closed); sympy/sympy#28875 (closed); sympy/sympy#28876 (closed); sympy/sympy#28877 (merged); sympy/sympy#28878 (merged)"
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body explicitly requires mypy sympy; comments describe temporary runtime assertions and pyright type checks."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "scope",
+      "match": true
+    },
+    {
+      "source": "Itqan-community/quran-apps-directory#298",
+      "captured": "2026-08-05",
+      "bundle_sha256": "f47d16093c114ddc6f435c9e6477bcb4d928f335ee1cfc3c2cefc68c6a4f68d2",
+      "output": {
+        "item": "issue-06",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-07-14 by abubakr-itqan, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-07-14 is 22 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body: make Submit App visible on desktop and functional in the mobile menu; related layouts of one action."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body specifies visible desktop action and working mobile-menu action, with LTR/RTL acceptance checks."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "wting/autojump#727",
+      "captured": "2026-08-05",
+      "bundle_sha256": "fc195cb4a1a79210c1f89949f240dea00721e7a8deae926c9e0f57987791c944",
+      "output": {
+        "item": "issue-07",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "fail",
+            "evidence": "Repo facts: most recent human/default-branch commit is 2025-02-10 (541 days old); all sampled issues lack maintainer responses and the available thread has no qualifying recent maintainer comment."
+          },
+          {
+            "name": "repository_active",
+            "grade": "fail",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2025-02-10 is 541 days before capture. Release is absent or older than 365 days; neither permitted activity route rescues this repository."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body: underscore-containing directory names trigger an AttributeError in get_ith_path; a specific behavior fix."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy: no CONTRIBUTING.md in the repo; no stated policy"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body provides an underscore-directory reproduction and AttributeError trace; successful navigation without that exception is the expected behavior."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Body names get_ith_path and includes its failing traceback."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "dead-repo",
+      "match": true
+    },
+    {
+      "source": "zulip/zulip#39794",
+      "captured": "2026-08-05",
+      "bundle_sha256": "2e9cf967824589001b80ee60b8f538573c35876096aaadd792b9f19401155d71",
+      "output": {
+        "item": "issue-08",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-03 by amanagr, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-03 is 2 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "fail",
+            "evidence": "Body asks to confirm intended design; July 24 comments leave component data-attribute versus handler design questions unresolved for the remaining banners."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Repo facts: this issue: assignees: piyushagarwal-55; linked PRs: zulip/zulip#39811 (open); the August 3 inactivity warning does not unassign the issue before the August 5 capture."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md, section \"AI use policy and guidelines\"): AI tools allowed; contributors must personally understand, test, and be able to explain every change; AI-generated PRs that appear untested or not understood are closed without review Obligations: understand, test and explain every change."
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body names the devtools/banners page and explains the unwanted mouse-click focus outline; migrated banners can be checked against that concrete behavior."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Body names web/src/banners.ts; maintainer comments approve incremental migration."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "claimed",
+      "match": true
+    },
+    {
+      "source": "conda/conda#7617",
+      "captured": "2026-08-05",
+      "bundle_sha256": "4e591757bd06736d59bbf53cd0922a3bb672604f86871c0983536ff05ac9f7b0",
+      "output": {
+        "item": "issue-09",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by codewithdaniel1, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body gives conda config --clear channels and channels: []; one bounded feature. Only one closed PR is listed, so the two-abandoned-PR rule does not apply."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Comments, 2022-01-20: MesaJonathan asks to take the issue; MEMBER jakirkham replies \"Think you can just give it a try if you are interested.\" Interpreted as an approved claim; no subsequent explicit release appears. The written approved-claim rule has no expiry, unlike the unacknowledged-claim exception."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md, section \"Generative AI\"): generative AI tools welcome; you are responsible for all contributions and must review and understand AI-generated content before including it in a pull request Obligation: personally review and understand generated content."
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body: conda config --clear channels should produce channels: []."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": false
+    },
+    {
+      "source": "tldr-pages/tldr#18405",
+      "captured": "2026-08-05",
+      "bundle_sha256": "3e5c7b556c6b69815481814c7d9b323be6c236b01d47dcc6eb44ff98d9182534",
+      "output": {
+        "item": "issue-10",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-05 by IMHOJEONG, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-05 is 0 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "fail",
+            "evidence": "Title says Documentation request megaissue; the body lists many independent page-request issues without selecting one."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "No assignee or open PR. February and June comments are broad contribution enquiries and general guidelines, not reservation of a specific page; both are older than 30 days."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): strongly discourages generative AI for new pages (output is often inaccurate); pull requests suspected of being made wholly or partly with generative AI or machine translation without human review are closed This is conditional permission under this rubric, not endorsement of unreviewed generation; human review is mandatory."
+          },
+          {
+            "name": "verification_path",
+            "grade": "unclear",
+            "evidence": "Body lists independent issue numbers; comments link general guidelines but identify no selected page, example or build/test check in this bundle."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "scope",
+      "match": true
+    },
+    {
+      "source": "zxcalc/zxlive#519",
+      "captured": "2026-08-05",
+      "bundle_sha256": "48ae772fe15a03a7f6ef79e6ed7a8dd7944539caa2ce9b0057e5105c0ebdd5b9",
+      "output": {
+        "item": "issue-11",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by RazinShaikh, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body identifies repeated sidebar rewrite execution, especially strong complementary in a long proof; one behavior fix."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body: click strong complementary in a long proof; expected one rewrite instead of repeated applications and a node cluster."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "unclear",
+            "evidence": "No beginner label or source file/function; the maintainer describes behavior without a concrete implementation suggestion."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "bookwyrm-social/bookwyrm#1133",
+      "captured": "2026-08-12",
+      "bundle_sha256": "485cba108170d29301c7ece71160a070c5f90cedec76ebaba9dcc4c35673290c",
+      "output": {
+        "item": "issue-12",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-12 by Mouse Reeve, within 180 days of 2026-08-12."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-12 is 0 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body requests including fractional progress toward a reading goal, with a numerical example; no abandoned PRs are listed."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "No assignee or linked PR. The 2024 contributor comment is stale; the maintainer gives technical HTML/CSS advice, not an explicit assignment or approval of exclusive ownership."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "fail",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md -> docs.joinbookwyrm.com/contributing.html, section \"Generative AI\"): \"Meaningful human interaction is the whole point of BookWyrm. We do not accept AI-generated code or documentation. If you are unsure how something in BookWyrm works, please ask for help – we are keen to help other humans to understand and contribute to the project.\""
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body: 1 of 10 books plus 20% of the next book should display 12%, not 10%."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "policy",
+      "match": true
+    },
+    {
+      "source": "kubernetes/minikube#23437",
+      "captured": "2026-08-05",
+      "bundle_sha256": "9bcd3a2bf569f6c176f9c241928a8784fe3d773075aa143b2019dac025f3e85d",
+      "output": {
+        "item": "issue-13",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: August 3 bot merge of human a4abdul7 PR #23409; sampled #23385 also has a 0.0-day first maintainer response."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-03 is 2 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body names four nerdctl-bin files and requires replacing leading spaces with tabs; one related indentation correction."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Repo facts: this issue: assignees: none; linked PRs: kubernetes/minikube#23438 (open); kubernetes/minikube#23439 (open)"
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body enumerates four files and requires tabs rather than leading spaces; inspect those lines against neighboring crictl-bin/helm-bin examples."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "claimed",
+      "match": true
+    },
+    {
+      "source": "LegalQuants/lq-ai#490",
+      "captured": "2026-08-05",
+      "bundle_sha256": "88d21ec92668f52edb05a8ac900fcd9d3c83ca7168fafa6832a100823ac7f52d",
+      "output": {
+        "item": "issue-14",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-05 by SaifAlYounan, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-05 is 0 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body limits changes to removing dead Discord references and routing questions to Discussions, with explicit exclusions."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Checking your work gives grep -rni discord with web/ and .github/MAINTAINERS/ exclusions, expecting empty output."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "zulip/zulip#19589",
+      "captured": "2026-08-05",
+      "bundle_sha256": "338cf397559c71cf694e2ac3dee830d8d3e2262a4910690d51355f2a25f92c0f",
+      "output": {
+        "item": "issue-15",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-03 by amanagr, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-03 is 2 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "fail",
+            "evidence": "Opened 2021-08-18, over 730 days before capture; #20840 and #23123 are closed-unmerged. The available comments do not subsequently narrow a concrete remaining implementation."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "No assignee or open PR in Repo facts. Available comments show repeated unassignments; the final unacknowledged February 2024 claim is older than 30 days. Unshown comments are not fetched in frozen mode."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md, section \"AI use policy and guidelines\"): AI tools allowed; contributors must personally understand, test, and be able to explain every change; AI-generated PRs that appear untested or not understood are closed without review Obligations: understand, test and explain every change."
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body and September 28 example distinguish command=/gitlab and text=test; this supplies a concrete payload assertion even though scope fails."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "scope",
+      "match": true
+    },
+    {
+      "source": "conda/conda#16487",
+      "captured": "2026-08-05",
+      "bundle_sha256": "08f9236288e7f4a2aa2776f5cc57d065ceefced1c67df84390d5a62e04ee4f96",
+      "output": {
+        "item": "issue-16",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by codewithdaniel1, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body describes raw channel notices breaking --json parsing with merged stdout/stderr; one output-stream behavior defect."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md, section \"Generative AI\"): generative AI tools welcome; you are responsible for all contributions and must review and understand AI-generated content before including it in a pull request Obligation: personally review and understand generated content."
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body: active channel notice with conda create --json and combined stderr/stdout should remain JSON-parseable; environment details are supplied."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "unclear",
+            "evidence": "Only a type::bug label; conda create is a CLI command, and configuration paths do not identify an implementation file/function."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "jarun/googler#428",
+      "captured": "2026-08-05",
+      "bundle_sha256": "c005612c792af79523f5ae45035f0d2baf59d3ebfe955bd5524397226a8050f1",
+      "output": {
+        "item": "issue-17",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: sampled #433 and #432 have first responses of 1.4 and 0.2 days. The written response-time alternative has no recency limit, so it passes despite old commits; repository_active separately fails."
+          },
+          {
+            "name": "repository_active",
+            "grade": "fail",
+            "evidence": "Repo facts: archived; latest default-branch commit 2021-11-13 is 1726 days before capture. Release is absent or older than 365 days; neither permitted activity route rescues this repository."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body identifies video search returning no results and a possible parser-format change, not a demanded core parser redesign."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy: no CONTRIBUTING.md in the repo; no stated policy"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body gives googler -V hello -d and a captured response attachment; video results should replace the demonstrated No results behavior."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "unclear",
+            "evidence": "No beginner label or named implementation file/function; the possible parser-format change is a hypothesis, not a concrete implementation suggestion."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "dead-repo",
+      "match": true
+    },
+    {
+      "source": "excalidraw/excalidraw#9656",
+      "captured": "2026-08-05",
+      "bundle_sha256": "85062d591a2dbbef3f3f024d525b47687ec0e68236bb5144f21684e34242b06f",
+      "output": {
+        "item": "issue-18",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by dwelle, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "June 16 maintainer comment approves excluding the line option while switching bound arrows among arrow types; the design is narrowed."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "fail",
+            "evidence": "Repo facts: this issue: assignees: none; linked PRs: excalidraw/excalidraw#9685 (open); excalidraw/excalidraw#10371 (open); excalidraw/excalidraw#11021 (closed); excalidraw/excalidraw#11460 (closed); excalidraw/excalidraw#11656 (open); LennyMalcolm0/excalidraw#314 (open)"
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body/comments: bind an arrow to an element and use Tab to switch arrow types while excluding the line option and preserving bindings."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Issue labels include good first issue (or equivalent), satisfying the beginner-label alternative."
+          }
+        ],
+        "verdict": "reject"
+      },
+      "gold_verdict": "reject",
+      "category": "claimed",
+      "match": true
+    },
+    {
+      "source": "zxcalc/zxlive#517",
+      "captured": "2026-08-05",
+      "bundle_sha256": "f667642b720c042baf90ee790c74709dc1a639d7f8f45ed2e3b9d5440af4095a",
+      "output": {
+        "item": "issue-19",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by RazinShaikh, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Maintainer body diagnoses slow matchers and UI waiting on the matching thread; suggestions address the same proof-mode freeze. Related performance criteria are permitted."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Title/body provide a performance reproduction: select a large subgraph in proof mode; assert that the UI stays responsive instead of blocking on matching."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "pass",
+            "evidence": "Maintainer suggests parallel matching, matching only expanded categories, and a separate rewrite thread."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "accept",
+      "category": "clear-accept",
+      "match": true
+    },
+    {
+      "source": "excalidraw/excalidraw#11811",
+      "captured": "2026-08-05",
+      "bundle_sha256": "32767a15768860726ddbb19703f41e4b747a56966076fc69a2906774ee77f524",
+      "output": {
+        "item": "issue-20",
+        "checks": [
+          {
+            "name": "maintainer_alive",
+            "grade": "pass",
+            "evidence": "Repo facts: human default-branch commit 2026-08-04 by dwelle, within 180 days of 2026-08-05."
+          },
+          {
+            "name": "repository_active",
+            "grade": "pass",
+            "evidence": "Repo facts: not archived; latest default-branch commit 2026-08-04 is 1 days before capture. The commit alternative satisfies the 180-day threshold; a release is not needed."
+          },
+          {
+            "name": "bounded_scope",
+            "grade": "pass",
+            "evidence": "Body states one toolbar-logo feature, place/resize/move/export behavior and excludes custom uploads. Logo asset TBD alone is not an explicit unresolved maintainer design choice under this row. The broad stated-outcome rule passes despite product-fit uncertainty."
+          },
+          {
+            "name": "available_to_contribute",
+            "grade": "pass",
+            "evidence": "Repo facts and available comments: issue open, no assignee, no open implementation PR or qualifying reserved claim in the supplied evidence."
+          },
+          {
+            "name": "ai_policy_compatible",
+            "grade": "pass",
+            "evidence": "Repo facts: contribution policy (CONTRIBUTING.md): no statement on AI or contribution tooling"
+          },
+          {
+            "name": "verification_path",
+            "grade": "pass",
+            "evidence": "Body explicitly states success: toolbar logo can be placed, resized, moved and exported. These are concrete UI assertions, despite the unresolved asset choice."
+          },
+          {
+            "name": "newcomer_guidance",
+            "grade": "unclear",
+            "evidence": "No beginner label or maintainer comment; packages/excalidraw and excalidraw-app are package directories rather than named implementation files/functions."
+          }
+        ],
+        "verdict": "accept"
+      },
+      "gold_verdict": "reject",
+      "category": "scope",
+      "match": false
+    }
+  ]
+}
