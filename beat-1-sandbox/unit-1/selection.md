@@ -2,6 +2,8 @@
 
 Path: `beat-1-sandbox/unit-1/selection.md`
 
+**Tool note:** I used Codex because Claude Code hit its spending limit. I will use Claude Code for future assignments. Codex supported the same evidence-based issue-selection exercise using the same rubric and snapshots, though it does not replace the required Claude evaluation.
+
 **Submission status: blocked by the course account’s individual spend limit.** The official full Sonnet evaluation was attempted after successful Claude Code authentication, but all 20 items errored before receiving verdicts. The live output below remains the disclosed Codex review, not the prescribed Claude Code run. Reflections use the student’s confirmed experience and time budget with AI assistance.
 
 ---

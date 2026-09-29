@@ -1,5 +1,7 @@
 # Unit 1 submission status
 
+I used Codex after Claude Code hit its spending limit and will use Claude Code for future assignments. The same rubric and evidence guided this review; acceptance of the tool substitution remains up to the instructor.
+
 This is a prepared draft, not a completed 25-point submission. Claude Code authentication succeeded and the student authorized the official evaluation. Its first full attempt failed on all 20 items because the account reports an individual spend limit. The original harness and model were used; no synthetic transcript or verdict was substituted.
 
 | Graded item | Points | Current state |
