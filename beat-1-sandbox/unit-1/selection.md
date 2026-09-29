@@ -2,7 +2,7 @@
 
 Path: `beat-1-sandbox/unit-1/selection.md`
 
-**Submission status: draft; the required full Sonnet harness evaluation has not been run.** The live output below was produced by Codex applying the installed skill, following the student's instruction to skip Claude. It is disclosed as an alternative execution, not represented as the required Claude Code run. The first-person reflection is an AI-assisted draft based on the student's stated experience and time budget and needs their review before submission.
+**Submission status: blocked by the course account’s individual spend limit.** The official full Sonnet evaluation was attempted after successful Claude Code authentication, but all 20 items errored before receiving verdicts. The live output below remains the disclosed Codex review, not the prescribed Claude Code run. Reflections use the student’s confirmed experience and time budget with AI assistance.
 
 ---
 
@@ -177,15 +177,15 @@ Evidence locations:
 
 **Run history**
 
-1. Prepared rubric version 1 from the course skill, evidence guide, and calibration examples. Local preflight output was `Harness recognizes filled rubric: True`, with 5 required checks and 2 preferred checks. This is a format check, not an agreement score.
-2. Checked Claude Code authentication; its status was `"loggedIn": false`. The student then requested that Claude be skipped. No full or partial Sonnet harness run occurred, and there are no agreement scores to report.
-3. Codex manually applied the rubric to scored snapshot `issue-12` for the analysis below, then conducted a separate live review of #57, #70, and #63. These are not scored harness runs and cannot establish a result out of 20 or the category floor.
+1. Prepared rubric version 1. Local format preflight reported `Harness recognizes filled rubric: True`, with 5 required checks and 2 preferred checks. This was not a scored run.
+2. **Official full evaluation attempt 1, 2026-09-29:** ran the unchanged course harness with the installed rubric and skill, all 20 scored bundles, and `--save-run`. The actual agreement line was `agreement: 0/0 scored items`. All 20 items returned `ERROR (claude exited 1: )`; no item received a verdict. The `0/0` reports no successfully scored items, not 0 correct out of 20. The harness refused to write the submission transcript and preserved the original placeholder.
+3. A direct diagnostic using the same `sonnet` model returned: `You've hit your individual spend limit · run /usage-credits to ask your admin for a higher limit`. Authentication had succeeded. No further model calls or retries were made after identifying the limit, and the rubric was not changed in response to this infrastructure failure.
 
-The template `eval-run.txt` is unchanged and is not a valid evaluation transcript. Before submission, the required harness run must replace it; this field must then quote every actual run's agreement line in chronological order, ending with the exact agreement line from the submitted transcript. No 18/20 or PASS claim is made here.
+No successful full run or category-floor result exists yet. Once the account administrator restores inference access, rerun the full harness and append its exact agreement line here. The last successful score must match the generated `eval-run.txt`; never hand-edit that transcript. The earlier Codex live review and manual snapshot analysis are not harness runs.
 
 **Issue analysis**
 
-Scored item: `issue-12`, the frozen BookWyrm issue captured on 2026-08-12. Manual rubric decision by Codex: `reject`. Instructor gold label in `eval/gold-labels.json`: `reject`. The harness verdict is not yet available.
+Scored item: `issue-12`, the frozen BookWyrm issue captured on 2026-08-12. Actual result in official attempt 1: `ERROR`, with `verdict: null` and `error: "claude exited 1: "`; the account limit prevented the model from making a decision. Instructor gold label in `eval/gold-labels.json`: `reject`. Separately, manual application of the current rubric by Codex gives `reject`. This manual decision is not substituted for the missing harness verdict.
 
 The decisive snapshot quote is: "We do not accept AI-generated code or documentation." That is an explicit ban applicable to a contribution that uses AI-generated code or documentation, so `ai_policy_compatible` fails for the planned AI-assisted generation workflow. Its required weight makes the verdict `reject` regardless of the issue's beginner label, recent commits, or otherwise bounded progress-bar request. This analysis uses the frozen policy entry, not the current public BookWyrm site. It demonstrates a real check application but is not evidence of a completed evaluation run.
 
@@ -201,7 +201,7 @@ This check is required because a technically suitable issue is still unsuitable 
 
 **Trade-offs**
 
-The quoted check deliberately accepts policies with disclosure, review, understanding, or testing conditions, even though the issue-selection stage cannot verify that those future obligations will be fulfilled. That permits useful contributions but leaves a later compliance responsibility. Conversely, genuinely unavailable policy evidence rejects a candidate and may miss a project that would have welcomed assistance. The 2026-08-12 snapshot for `issue-12` is rejected by manual application of this check; there has been no Sonnet rerun to establish its effect on the complete set. Policy can change, so it should be rechecked before a contribution is submitted.
+The quoted check deliberately accepts policies with disclosure, review, understanding, or testing conditions, even though the issue-selection stage cannot verify that those future obligations will be fulfilled. That permits useful contributions but leaves a later compliance responsibility. Conversely, genuinely unavailable policy evidence rejects a candidate and may miss a project that would have welcomed assistance. The 2026-08-12 snapshot for `issue-12` is rejected by manual application of this check; the attempted Sonnet run produced only errors, so it does not establish the check’s effect on the complete set. Policy can change, so it should be rechecked before a contribution is submitted.
 
 ---
 
@@ -209,9 +209,9 @@ The quoted check deliberately accepts policies with disclosure, review, understa
 
 **Selection rationale**
 
-1. **Fit and available time.** I have used SQL, Java, and Python, and I have about 6–10 hours available for Unit 2. I selected #57 because it uses Python and asks for one concrete path-filtering correction with two named regression tests. That gives me a focused starting point and room for environment setup, reproduction, and edge-case checks. I want to improve C and C++ too, but this particular contribution builds on Python; it is not a C/C++ exercise. The time fit is a planning estimate, not a claim that I have already implemented the fix.
-2. **What the verdict captured and what I weighed.** The review correctly identified recent human commits, a bounded request, a verification route, and no blocking assignee or open implementation PR at the time checked. It applied the classroom exception to existing student claims. I also weighed the chance to practice reading and testing Python path-handling code. Reading the code shows that filtering already exists but matches patterns containing leading slashes, which is a more precise investigation target than assuming there is no filter at all. The detector also selects a primary language from a sorted language set; changing that separate behavior would expand this issue's scope. I have not reproduced the bug myself yet, so Unit 2 must confirm the diagnosis.
-3. **Anticipated difficulty in claiming it.** Several classmates have already posted claims or reproduction reports on #57. The Path Review rule permits shared issues, so these comments should not prevent my own Unit 2 contribution. I still need to recheck the issue and PR state, write my own claim using the Unit 2 voice guide, and respect the other students' work. No claim or comment has been posted from this task.
+1. **Fit and available time.** I have used SQL, Java, and Python, and I can spend about 6–10 hours on Unit 2. Issue #57 is a focused Python bug with a reproduction example and two named regression tests. It should leave room for setup, investigation, and testing. I also want to improve C and C++, but this issue builds on my Python experience.
+2. **What the verdict captured and what I weighed.** The disclosed Codex review identified recent human commits, a bounded change, named tests, and no blocking assignee or open implementation PR when checked. It correctly ignored classmates’ claim comments under the classroom rule. I also valued the chance to practice Python path handling. The code already has a filter, but its patterns require a leading slash; Unit 2 should verify that diagnosis rather than assume it. Changing the separate primary-language ranking behavior would expand the scope. I have not yet reproduced or implemented this issue.
+3. **Anticipated difficulty in claiming it.** Several classmates have already claimed or investigated #57, but the Path Review rule allows shared issues. I will recheck its current state, write my own Unit 2 claim, and keep my work focused on the reported bug. No claim or comment has been posted from this task.
 
 ---
 
