@@ -1,23 +1,3 @@
-# Unit 1 — Issue Selection
-
-Path: `beat-1-sandbox/unit-1/selection.md`
-
-**Submission status: draft; the required full Sonnet harness evaluation has not been run.** The live output below was produced by Codex applying the installed skill, following the student's instruction to skip Claude. It is disclosed as an alternative execution, not represented as the required Claude Code run. The first-person reflection is an AI-assisted draft based on the student's stated experience and time budget and needs their review before submission.
-
----
-
-## Selected issue
-
-**Issue link**
-
-https://github.com/codepath/pathreview-ai301-fa26-s3/issues/57
-
-Tech detector counts vendored and build-output files, skewing language detection.
-
-**Verdict output**
-
-The following is copied verbatim from `live-review-codex.md`. The selected issue's verdict is `accept`. This is a Codex execution of the skill, not a Claude Code execution; acceptance of this substitution must not be assumed.
-
 issue-select live review — 2026-09-29
 
 Executor: Codex, applying the installed issue-select skill directly at the student's request. This is not Claude Code output and is not a Sonnet harness evaluation. Evidence was fetched from GitHub on 2026-09-29; implementation and reproduction have not been performed by this review.
@@ -170,49 +150,3 @@ Evidence locations:
   }
 ]
 ```
-
----
-
-## Eval iterations
-
-**Run history**
-
-1. Prepared rubric version 1 from the course skill, evidence guide, and calibration examples. Local preflight output was `Harness recognizes filled rubric: True`, with 5 required checks and 2 preferred checks. This is a format check, not an agreement score.
-2. Checked Claude Code authentication; its status was `"loggedIn": false`. The student then requested that Claude be skipped. No full or partial Sonnet harness run occurred, and there are no agreement scores to report.
-3. Codex manually applied the rubric to scored snapshot `issue-12` for the analysis below, then conducted a separate live review of #57, #70, and #63. These are not scored harness runs and cannot establish a result out of 20 or the category floor.
-
-The template `eval-run.txt` is unchanged and is not a valid evaluation transcript. Before submission, the required harness run must replace it; this field must then quote every actual run's agreement line in chronological order, ending with the exact agreement line from the submitted transcript. No 18/20 or PASS claim is made here.
-
-**Issue analysis**
-
-Scored item: `issue-12`, the frozen BookWyrm issue captured on 2026-08-12. Manual rubric decision by Codex: `reject`. Instructor gold label in `eval/gold-labels.json`: `reject`. The harness verdict is not yet available.
-
-The decisive snapshot quote is: "We do not accept AI-generated code or documentation." That is an explicit ban applicable to a contribution that uses AI-generated code or documentation, so `ai_policy_compatible` fails for the planned AI-assisted generation workflow. Its required weight makes the verdict `reject` regardless of the issue's beginner label, recent commits, or otherwise bounded progress-bar request. This analysis uses the frozen policy entry, not the current public BookWyrm site. It demonstrates a real check application but is not evidence of a completed evaluation run.
-
-**Check rationale**
-
-The exact current row in `tools/issue-select/rubric.md` is:
-
-```text
-| ai_policy_compatible | Eval: the contribution-policy entry in Repo facts. Live: root and .github/ CONTRIBUTING files, linked contributor rules, AI_POLICY.md or AI_USAGE_POLICY.md if present, and PR-template disclosure requirements. | The inspected policy does not ban the planned AI-assisted contribution. Explicitly permitted assistive use passes even when fully AI-generated submissions are prohibited. Disclosure, human review, understanding, and testing requirements pass and must be recorded for later compliance. A confirmed absence of AI-specific restrictions passes; an unreadable or uninspected policy is unclear. | required |
-```
-
-This check is required because a technically suitable issue is still unsuitable when the intended contribution would violate the repository's stated policy. The source column identifies where the policy must be read. Explicit permission for assistive use is distinguished from an outright prohibition, while review and testing conditions remain obligations. This avoids incorrectly treating every mention of AI as a ban. An unread policy is `unclear`; it is not treated as policy silence.
-
-**Trade-offs**
-
-The quoted check deliberately accepts policies with disclosure, review, understanding, or testing conditions, even though the issue-selection stage cannot verify that those future obligations will be fulfilled. That permits useful contributions but leaves a later compliance responsibility. Conversely, genuinely unavailable policy evidence rejects a candidate and may miss a project that would have welcomed assistance. The 2026-08-12 snapshot for `issue-12` is rejected by manual application of this check; there has been no Sonnet rerun to establish its effect on the complete set. Policy can change, so it should be rechecked before a contribution is submitted.
-
----
-
-## Selection rationale
-
-**Selection rationale**
-
-1. **Fit and available time.** I have used SQL, Java, and Python, and I have about 6–10 hours available for Unit 2. I selected #57 because it uses Python and asks for one concrete path-filtering correction with two named regression tests. That gives me a focused starting point and room for environment setup, reproduction, and edge-case checks. I want to improve C and C++ too, but this particular contribution builds on Python; it is not a C/C++ exercise. The time fit is a planning estimate, not a claim that I have already implemented the fix.
-2. **What the verdict captured and what I weighed.** The review correctly identified recent human commits, a bounded request, a verification route, and no blocking assignee or open implementation PR at the time checked. It applied the classroom exception to existing student claims. I also weighed the chance to practice reading and testing Python path-handling code. Reading the code shows that filtering already exists but matches patterns containing leading slashes, which is a more precise investigation target than assuming there is no filter at all. The detector also selects a primary language from a sorted language set; changing that separate behavior would expand this issue's scope. I have not reproduced the bug myself yet, so Unit 2 must confirm the diagnosis.
-3. **Anticipated difficulty in claiming it.** Several classmates have already posted claims or reproduction reports on #57. The Path Review rule permits shared issues, so these comments should not prevent my own Unit 2 contribution. I still need to recheck the issue and PR state, write my own claim using the Unit 2 voice guide, and respect the other students' work. No claim or comment has been posted from this task.
-
----
-
-Related paths: `eval-run.txt`, `live-review-codex.md`, and `submission-status.md` in this directory; the installed skill's submitted copy is in `tools/issue-select/`.
