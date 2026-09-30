@@ -1,4 +1,3 @@
 I’m investigating #57 for CodePath AI301: `TechDetector` counts JavaScript under `node_modules/` and `build/`, which can affect language detection. I’ll run the issue’s eight-file example in my fork, inspect the returned language counts, and check `test_node_modules_excluded` and `test_build_directory_excluded`. I’ll post a report with the checkout revision, environment, commands, and observed output, including any differences from the issue’s expected result.
 
 AI assistance: Codex helped draft this claim and will help execute and document the investigation; I’m not claiming a reproduction or a fix yet.
-

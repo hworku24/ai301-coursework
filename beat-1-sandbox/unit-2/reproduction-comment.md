@@ -103,4 +103,3 @@ The relevant source is `agent/tools/tech_detector.py::_should_skip_file`: its pa
 There is also a separate behavior: `_detect_tech` collects languages in a set and takes the first sorted language; it does not return per-language file counts or select the majority. The first-party-JavaScript control still returns JavaScript with two Python files and one JavaScript file. Therefore this report confirms root-level exclusion and the issue's reported output, but does not claim that majority counting is implemented or that this is the only language-selection defect. No fix, marker removal or full-application test was performed.
 
 AI assistance: Codex helped draft this report and execute the recorded commands in my local fork. These are actual outputs from that environment, not an independent manual verification by me or a copy of another student's reproduction.
-
