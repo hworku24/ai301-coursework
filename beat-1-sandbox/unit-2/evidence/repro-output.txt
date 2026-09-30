@@ -1,0 +1,10 @@
+issue_exact: {"all_languages": ["JavaScript", "Python"], "frameworks": [], "primary_language": "JavaScript", "success": true}
+source_only_control: {"all_languages": ["Python"], "frameworks": [], "primary_language": "Python", "success": true}
+node_modules_only: {"all_languages": ["JavaScript", "Python"], "frameworks": [], "primary_language": "JavaScript", "success": true}
+build_only: {"all_languages": ["JavaScript", "Python"], "frameworks": [], "primary_language": "JavaScript", "success": true}
+nested_paths_control: {"all_languages": ["Python"], "frameworks": [], "primary_language": "Python", "success": true}
+first_party_js_control: {"all_languages": ["JavaScript", "Python"], "frameworks": [], "primary_language": "JavaScript", "success": true}
+skip('node_modules/lib/index.js'): False
+skip('build/bundle.js'): False
+skip('repo/node_modules/lib/index.js'): True
+skip('repo/build/bundle.js'): True

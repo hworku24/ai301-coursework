@@ -1,0 +1,5 @@
+...x.x.....................                                              [100%]
+=========================== short test summary info ============================
+XFAIL tests/unit/test_tech_detector.py::TestTechDetector::test_node_modules_excluded - issue #57: tech detector counts vendored/build-output files
+XFAIL tests/unit/test_tech_detector.py::TestTechDetector::test_build_directory_excluded - issue #57: tech detector counts vendored/build-output files
+25 passed, 2 xfailed in 0.11s

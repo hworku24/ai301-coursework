@@ -1,0 +1,24 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________________ TestTechDetector.test_node_modules_excluded __________________
+tests/unit/test_tech_detector.py:81: in test_node_modules_excluded
+    assert data["primary_language"] == "Python"
+E   AssertionError: assert 'JavaScript' == 'Python'
+E     
+E     - Python
+E     + JavaScript
+----------------------------- Captured stdout call -----------------------------
+2026-09-30 02:35:07 [info     ] tech_detected                  frameworks_count=0 languages_count=2 primary_lang=JavaScript
+________________ TestTechDetector.test_build_directory_excluded ________________
+tests/unit/test_tech_detector.py:111: in test_build_directory_excluded
+    assert data["primary_language"] == "Python"
+E   AssertionError: assert 'JavaScript' == 'Python'
+E     
+E     - Python
+E     + JavaScript
+----------------------------- Captured stdout call -----------------------------
+2026-09-30 02:35:07 [info     ] tech_detected                  frameworks_count=0 languages_count=2 primary_lang=JavaScript
+=========================== short test summary info ============================
+FAILED tests/unit/test_tech_detector.py::TestTechDetector::test_node_modules_excluded
+FAILED tests/unit/test_tech_detector.py::TestTechDetector::test_build_directory_excluded
+2 failed, 25 deselected in 0.06s
